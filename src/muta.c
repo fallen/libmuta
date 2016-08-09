@@ -63,7 +63,7 @@ static void client_event_cb(struct pomp_ctx *ctx, enum pomp_event event,
           ULOGI("received a FD from pimp: %d", fd);
           video_buffer = mmap(NULL, bufsize, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
           s_app.process(video_buffer, bufsize, videoformat, width, height, s_app.priv);
-          pomp_msg_send();
+//          pomp_msg_send();
           break;
         default:
           ULOGW("received unknown message id from pimp : %d", msgid);
@@ -84,7 +84,7 @@ void muta_connect(libmuta_processing_callback f, void *priv)
 
   memset(&addr_storage, 0, sizeof(addr_storage));
   addr = (struct sockaddr *)&addr_storage;
-  addrlen = sizeof(addr_storage); 
+  addrlen = sizeof(addr_storage);
 
   pomp_addr_parse("unix:/var/snap/facedetect/common/lol.sock", addr, &addrlen);
 
