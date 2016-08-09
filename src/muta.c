@@ -63,7 +63,7 @@ static void client_event_cb(struct pomp_ctx *ctx, enum pomp_event event,
           ULOGI("received a FD from pimp: %d", fd);
           video_buffer = mmap(NULL, bufsize, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
           s_app.process(video_buffer, bufsize, videoformat, width, height, s_app.priv);
-//          pomp_msg_send();
+          pomp_ctx_send(ctx, BUFFER_PROCESSING_DONE, "");
           break;
         default:
           ULOGW("received unknown message id from pimp : %d", msgid);
