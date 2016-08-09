@@ -86,7 +86,7 @@ void muta_connect(libmuta_processing_callback f, void *priv)
   addr = (struct sockaddr *)&addr_storage;
   addrlen = sizeof(addr_storage);
 
-  pomp_addr_parse("unix:/var/snap/facedetect/common/lol.sock", addr, &addrlen);
+  pomp_addr_parse(LIBMUTA_IMAGE_SOCKET, addr, &addrlen);
 
   s_app.ctx = pomp_ctx_new(client_event_cb, f);
   s_app.loop = pomp_ctx_get_loop(s_app.ctx);

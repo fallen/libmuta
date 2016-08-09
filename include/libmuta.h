@@ -9,6 +9,8 @@
 extern "C" {
 #endif
 
+#define LIBMUTA_IMAGE_SOCKET "unix:/tmp/facedetect-lol.sock"
+
 typedef void (*libmuta_processing_callback)(void *buffer, unsigned int bufsize, GstVideoFormat videoformat, unsigned int width, unsigned int height, void *priv);
 
 void muta_connect(libmuta_processing_callback f, void *priv);
