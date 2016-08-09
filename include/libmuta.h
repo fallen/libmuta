@@ -1,10 +1,9 @@
 #ifndef _LIBMUTA_H_
 #define _LIBMUTA_H_
 
-
 #include <stdint.h>
 #include <stdlib.h>
-#include <gst/video/video.h>
+#include <gst/video/video-format.h>
 
 #ifdef __cplusplus
 extern "C" {
