@@ -9,7 +9,7 @@
 extern "C" {
 #endif
 
-#define LIBMUTA_IMAGE_SOCKET "unix:/tmp/facedetect-lol.sock"
+#define LIBMUTA_IMAGE_SOCKET "unix:@gst-parrot-userfilter"
 
 typedef void (*libmuta_processing_callback)(void *buffer, unsigned int bufsize, GstVideoFormat videoformat, unsigned int width, unsigned int height, void *priv);
 
